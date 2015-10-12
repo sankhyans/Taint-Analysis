@@ -10,6 +10,7 @@ Static context-insensitive taint analysis on an intermediate representation of J
 Information about such tainted variables is represented as:
 
 1.1 Fixed Signature for each Method : 
+
 	(a) Pre - Set: It will contain the information about the tainted parameters passed to the function as the input parameters. Hence, the name pre-set.
 
 	(b) Gen - Set: It will contain the information about the variables that are still alive when the method returns back to the caller and these were tainted during method execution. It is basically the generated variable set obtained from an untrusted source.
@@ -17,9 +18,11 @@ Information about such tainted variables is represented as:
 	(c) Kill - Set: It will contain the information about the variables that are still alive when the method returns back to the caller but these were untainted during method execution. It is basically the killed tainted variable set. This was validated to ensure that the value is proper and untainted.
 Example - variable obtained after re-assignment with untainted variable.
 
+
 1.2 Taint information within each method is given as:
 	(a) Entry - Set: It will contain the information about the tainted variables before the statement was executed. 
 	(b) Exit - Set: It will contain the information about the tainted variables after the statement was executed.
+
 
 
 2. A description of the strategy taken to perform context-insensitivity of the taint analysis.
